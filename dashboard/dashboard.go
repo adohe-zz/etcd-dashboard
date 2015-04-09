@@ -5,7 +5,7 @@ import (
 	"path"
 	"fmt"
 	
-	"github.com/gorilla/mux"
+	"github.com/AdoHe/etcd-dashboard/third_party/github.com/gorilla/mux"
 )
 
 func addSlash(w http.ResponseWriter, req *http.Request) {
@@ -15,11 +15,11 @@ func addSlash(w http.ResponseWriter, req *http.Request) {
 
 func indexPage(w http.ResponseWriter, req *http.Request) {
 	fmt.Printf("%s", "serve index page")
-	http.ServeFile(w, req, path.Join("./dashboard/dist", "index.html"))
+	http.ServeFile(w, req, path.Join("../dashboard/dist", "index.html"))
 }
 
 func HttpHandler() (handler http.Handler) {
-	handler = http.FileServer(http.Dir("./dashboard/dist"))
+	handler = http.FileServer(http.Dir("../dashboard/dist"))
 	return handler
 }
 

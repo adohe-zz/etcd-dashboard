@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+if [ ! -h gopath/src/github.com/AdoHe/etcd-dashboard ]; then
+        mkdir -p gopath/src/github.com/AdoHe/
+        ln -s ../../../.. gopath/src/github.com/AdoHe/etcd-dashboard
+fi
+
+export GOBIN=${PWD}/bin
+export GOPATH=${PWD}/gopath
+export GOFMTPATH="./config ./dashboard main.go"
+
+if [ "--fmt" = "$1" ]; then
+        gofmt -s -w -l $GOFMTPATH
+fi
+
+go install github.com/AdoHe/etcd-dashboard

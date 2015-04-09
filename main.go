@@ -6,9 +6,9 @@ import (
 	"os"
 	"fmt"
 	
-	"github.com/gorilla/mux"
-	"etcd-dashboard/dashboard"
-	"etcd-dashboard/config"
+	"github.com/AdoHe/etcd-dashboard/third_party/github.com/gorilla/mux"
+	"github.com/AdoHe/etcd-dashboard/dashboard"
+	"github.com/AdoHe/etcd-dashboard/config"
 )
 
 func main() {
